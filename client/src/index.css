@@ -1,0 +1,126 @@
+:root {
+    --bg-color: #111;
+    --font-color: #eee;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: whitesmoke;
+}
+
+#root {
+    margin: auto;
+    margin: 2rem auto;
+    text-align: center;
+    color: var(--font-color);
+    width: 80%;
+    padding: 1.5rem;
+    background-color: #222;
+}
+
+.stock-list {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+}
+
+.stock {
+    list-style: none;
+    text-align: left;
+    opacity: .9;
+}
+
+.stock .stock-info {
+    display: inline-block;
+}
+
+.stock-symbol {
+    margin: .5rem;
+}
+
+.stock-name {
+    margin: .5rem;
+}
+
+.close {
+    float: right;
+    position: relative;
+    padding-top: .3rem;
+    padding-right: .3rem;
+    cursor: pointer;
+}
+
+.addStock {
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "label label" "input button" "error error";
+    height: 6rem;
+    margin: 3rem auto;
+}
+.addStock label {
+    text-align: left;
+    grid-area: label;
+}
+.addStock input {
+    grid-area: input;
+    padding: .2rem .5rem;
+    border: none;
+    border-right: none;
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+}
+.addStock button {
+    grid-area: button;
+    border: none;
+    color: #f9f9f9;
+    background-color: rgb(66, 139, 202);
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    cursor: pointer;
+}
+.addStock p {
+    margin: 0;
+    margin-top: .5rem;
+    grid-area: error;
+}
+
+#chart {
+    position: relative;
+    background-color: var(--bg-color);
+}
+
+.axis text {
+    fill: var(--font-color);
+}
+
+.xAxis path, .xAxis line {
+    stroke: var(--font-color);
+}
+
+.yAxis .domain, .yAxis line {
+    display: none;
+}
+
+.line {
+    stroke-width: 2px;
+    fill: none;
+}
+
+.focus {
+    fill: none;
+}
+
+.mouse-line {
+    stroke: var(--font-color);
+    stroke-width: 1px;
+}
+
+.tooltip {
+    fill: var(--font-color);
+    position: fixed;
+    font-size: .7rem;
+}
