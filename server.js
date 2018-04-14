@@ -13,7 +13,9 @@ dotenv.config();
 mongoose.connect(process.env.MONGO_URL);
 const db = mongoose.connection;
 
-server.listen(3001, () => console.log('Server listening on port 3001...'));
+server.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}`));
+
+app.use(express.static(path.join(__dirname, "client/build")))
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'client/public/index.html'));
